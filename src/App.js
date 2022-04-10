@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import './App.css';
+import Mainpage from './components/main';
+import './components/main.css';
+import './components/stars.css';
+import Dashboard from './components/Dashboard';
+import './components/Style.css';
+import Request from './components/Request';
+import Member from './components/Member';
+import Upload from './components/upload';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+      
+         <BrowserRouter>
+    
+         
+              <Routes>
+               
+                  <Route exact path='/' element={<Mainpage />}>
+                  </Route>
+
+                  <Route exact path='/dash' element={<Dashboard />}>
+                  </Route>
+
+                  
+                  <Route exact path='/Req' element={<Request />}>
+                  </Route>
+    
+                  <Route exact path='/Member' element={<Member />}>
+                  </Route>
+
+                  <Route exact path='/upload' element={<Upload />}>
+                  </Route>
+    
+              </Routes>
+         </BrowserRouter>
+      </div>
+
+   
   );
 }
 
